@@ -12,3 +12,7 @@ def homepage():
                 <li>Educator Info: /educators</li>
             </ul>"""
 
+@app.route("/time")
+def current_time():
+    time_dict = {"current time": str(datetime.now().strftime('%H:%M'))}
+    return json.dumps(time_dict)
