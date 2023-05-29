@@ -45,3 +45,16 @@ def educators():
      }
     return json.dumps(educator_dict)
 
+# Example of dynamic routing
+# @app.route("/<some_value>")
+# def some_page(some_value):
+#     return f"<p>You gave the value {some_value} in the route!</p>"
+
+# Its better to do add a section of the route to specify its purpose to avoid colliding routes with the same name
+@app.route("/some_page/<some_value>")
+def some_page(some_value):
+    return f"<p>You gave the value {some_value} in the route!</p>"
+
+@app.route("/info")
+def info_page():
+    return "<p>This is the info page.</p>"
